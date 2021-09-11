@@ -9,3 +9,4 @@
 
 - Take note of how markdown works
 - Don't forget to fork first, dummy
+- push using ssh
