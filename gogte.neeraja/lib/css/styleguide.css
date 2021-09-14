@@ -189,14 +189,11 @@ p{line-height: 150%;}
 	}
 	
 
-	.nav a:hover {
+	.nav-pills a:hover {
 		color: var(--color-neutral-medium);
 		text-decoration:none;
 	}
-	.nav .active a {
-		color: var(--color-neutral-medium);
-		text-decoration:underline;
-	}
+
 
 .nav-pagination ul,
 .nav-tabs ul,

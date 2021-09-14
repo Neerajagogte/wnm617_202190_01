@@ -7,17 +7,11 @@
 
 body {
 	color: var(--color-body);
-	background-color: var(--color-neutral-light);
+	background-color: white;
 	padding-bottom: 6em;
 }
 
-a {
-	color: var(--color-main-dark);
-}
 
-.navbar a {
-    color: #000;
-}
 
 
 
