@@ -111,7 +111,7 @@ p{line-height: 150%;}
 /* LAYOUT CLASSES */
 
 .container{
-	max-width: 1200px;
+	max-width: 1300px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -196,11 +196,10 @@ p{line-height: 150%;}
 	
 
 	.nav a:hover {
-		color: var(--color-black);
 		text-decoration:none;
 	}
 	.nav .active a {
-		color: var(--color-black);
+		
 		text-decoration:underline;
 	}
 
@@ -231,78 +230,19 @@ p{line-height: 150%;}
 
 
 .nav-pills a:hover {
-	background-color: var(--color-neutral-medium);
-	color: var(--color-neutral-darkest);
+	background-color: none;
 	transition: all 0.3s;
-	text-decoration:none;
-}
-
-
-
-
-
-
-
-
-.nav-pills-invert a {
-	background-color:var(--color-gray-dark);
-	color:var(--color-gray-light);
-}
-.nav-pills-invert a:hover {
-	background-color:var(--color-gray-light);
-	color:var(--color-gray-dark);
-}
-
-.nav-crumbs li:not(:first-child)::before {
-	content:' > ';
-	display:inline-block;
-	color:var(--color-gray-light);
-}
-.nav-crumbs a {
-	display:inline-block;
-	background-color:transparent;
-	color:var(--color-neutral-darkest);
-}
-
-.nav-crumbs a:hover {
-	background-color:transparent;
-	color:var(--color-gray-dark);
-	text-decoration:underline;
-}
-.nav-crumbs li.active a {
-	background-color:transparent;
 	text-decoration:underline;
 }
 
 
 
 
-.nav-tabs ul {
-	border-bottom:3px solid var(--color-gray-light);
-}
-.nav-tabs a:hover {
-	background-color:var(--color-gray-light);
-	color:var(--color-gray-dark);
-}
-.nav-tabs a {
-	position:relative;
-}
-.nav-tabs li.active a {
-	background-color:transparent;
-}
-.nav-tabs a::after {
-	content:'';
-	width:100%;
-	height:0;
-	background-color:var(--color-hero);
-	position:absolute;
-	bottom:-3px;
-	left:0;
-	transition:all 0.3s;
-}
-.nav-tabs li.active a::after {
-	height:3px;
-}
+
+
+
+
+
 
 
 .nav-pagination a,
