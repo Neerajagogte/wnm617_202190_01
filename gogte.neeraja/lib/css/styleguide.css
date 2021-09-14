@@ -41,13 +41,6 @@ li{display: inline;} */
 	--color-neutral-dark:#09806e;
 	--color-neutral-darkest:#373033;
 
-	--color-main-light:#9292f3;
-	--color-main-medium:#09806e;
-	--color-main-dark:#09806e;
-
-	--color-alt-light:lightgreen;
-	--color-alt-medium:green;
-	--color-alt-dark:darkgreen;
 
 	--color-black:#000;
 	--color-white:#fff;
@@ -114,6 +107,7 @@ p{line-height: 150%;}
 	max-width: 1300px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 20px;
 }
 
 .overcrop {
@@ -196,11 +190,11 @@ p{line-height: 150%;}
 	
 
 	.nav a:hover {
-		color: #07b399;
+		color: var(--color-neutral-medium);
 		text-decoration:none;
 	}
 	.nav .active a {
-		color: var(--color-black);
+		color: var(--color-neutral-medium);
 		text-decoration:underline;
 	}
 
