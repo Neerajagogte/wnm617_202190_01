@@ -407,7 +407,8 @@ p{line-height: 150%;}
 	
 
 .view-window {
-	height:60vh;
+	width: 40vh;
+	height:40vh;
 	position:relative;
 	overflow:hidden;
 	background-size:cover;
