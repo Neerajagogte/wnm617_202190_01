@@ -11,6 +11,13 @@ body {
 	padding-bottom: 6em;
 }
 
+a {
+	color: var(--color-main-dark);
+}
+
+.navbar a {
+    color: #000;
+}
 
 
 

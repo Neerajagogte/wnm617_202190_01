@@ -196,10 +196,11 @@ p{line-height: 150%;}
 	
 
 	.nav a:hover {
+		color: #07b399;
 		text-decoration:none;
 	}
 	.nav .active a {
-		
+		color: var(--color-black);
 		text-decoration:underline;
 	}
 
