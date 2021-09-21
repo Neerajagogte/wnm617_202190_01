@@ -1,0 +1,19 @@
+*, *::after, *::before {
+	box-sizing:border-box;
+}
+
+	--color-neutral-light:#FDCC04;
+	--color-neutral-medium:#F73C56;
+	--color-neutral-dark:#4C35B4;
+	--color-neutral-darkest:#2E216C;
+
+
+	--color-black:#000;
+	--color-white:#fff;
+
+	--header-height:5rem;
+
+	--font-serif: minion-pro,"Times new roman",serif;
+	--font-sans: raleway, sans-serif;
+
+	.header-container{color: var(--color-neutral-medium);}
