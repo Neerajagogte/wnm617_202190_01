@@ -7,6 +7,9 @@
 
 
 ### Assignment 2
+- http://neerajagogte.com/public_html/aau/wnm617/gogte.neeraja/portfolio/profile.html
+
+### Assignment 3
 - http://neerajagogte.com/aau/wnm617/gogte.neeraja/initializr/index.html
 
 ## Perhaps Some Notes
