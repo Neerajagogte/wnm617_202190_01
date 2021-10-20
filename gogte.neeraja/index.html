@@ -90,7 +90,8 @@
 			<header data-role="header">
 				<h1>Welcome to Flutter!</h1>
 				<ul>
-					<li><a href="#" data-rel="back"> &lt; </a></li>
+					<li><a href="#" data-activate="#map-more-modal"><img class="hamburger-icon" src="img/hamburger-menu-icon.png"></a></li>
+
 				</ul>
 			</header>	
 		</div>
@@ -104,7 +105,8 @@
 		</footer>
 		<div class="modal" id="map-add-modal">
 			<div class="modal-back" data-deactivate="#map-add-modal">
-				<form class="modal-popup form" id="map-add-form" data-ajax="false">
+			</div>
+			<form class="modal-popup form" id="map-add-form" data-ajax="false">
 					<div class="modal-head centered"><h3>Add Butterfly</h3></div>
 					<div class="modal-body">
 						<div class="form-control">
@@ -122,70 +124,57 @@
 						<div class="centered"><input type="submit" value="save" data-role="none"class="save-btn"></div>
 					</div>
 				</form>
-			</div>
 		</div>
+
+		<div class="modal" id="map-more-modal">
+			<div class="modal-hamburger-back" data-deactivate="#map-more-modal"></div>
+			
+			<div class="modal-drawer left">
+				<div class="modal-hamburger-head"></div>
+				<div class="modal-hamburger-body"></div>
+				<div class="modal-hamburger-foot">
+					<div class="profile-photo">
+						<img src="img/profile-photo.jpg">
+						<ul>
+							<li>Neeraja Gogte</li>
+							<li>23 butterflies</li>
+						</ul>
+					</div>
+					<div class="line"></div>
+					<div class="hamburger-menu">
+						<ul>
+							<li><a href="#page-recent">LOCATION</li>
+							<li><a href="#page-list">BUTTERFLY LIST</li>
+							<li><a href="#page-user-profile">YOUR PROFILE</li>
+						</ul>
+					<div class="modal-hamburger-close" data-deactivate="#map-more-modal"><img src="img/hamburger-close-icon.png"></div>
+				</div>
+				
+		</div>
+
 	</section>
 
 	<section data-role="page" id="page-list">
 		<header data-role="header">
-				<h1>Butterflies</h1>
-				<ul>
-					<li><a href="#" data-rel="back"> &lt; </a></li>
-				</ul>
+				<h1>My butterfly list</h1>
+				
 			</header>
+		
 		<div data-role="main" class="overscroll">
 
-			<ul>
-				<li><a href="#page-animal-profile">Butterfly 1</a></li>
-				<li><a href="#page-animal-profile">Butterfly 2</a></li>
-				<li><a href="#page-animal-profile">Butterfly 3</a></li>
-				<li><a href="#page-animal-profile">Butterfly 4</a></li>
-				<li><a href="#page-animal-profile">Butterfly 5</a></li>
-				<li><a href="#page-animal-profile">Butterfly 6</a></li>
-				<li><a href="#page-animal-profile">Butterfly 7</a></li>
-				<li><a href="#page-animal-profile">Butterfly 8</a></li>
-				<li><a href="#page-animal-profile">Butterfly 9</a></li>
-				<li><a href="#page-animal-profile">Butterfly 10</a></li>
-				<li><a href="#page-animal-profile">Butterfly 1</a></li>
-				<li><a href="#page-animal-profile">Butterfly 2</a></li>
-				<li><a href="#page-animal-profile">Butterfly 3</a></li>
-				<li><a href="#page-animal-profile">Butterfly 4</a></li>
-				<li><a href="#page-animal-profile">Butterfly 5</a></li>
-				<li><a href="#page-animal-profile">Butterfly 6</a></li>
-				<li><a href="#page-animal-profile">Butterfly 7</a></li>
-				<li><a href="#page-animal-profile">Butterfly 8</a></li>
-				<li><a href="#page-animal-profile">Butterfly 9</a></li>
-				<li><a href="#page-animal-profile">Butterfly 10</a></li>
-				<li><a href="#page-animal-profile">Butterfly 1</a></li>
-				<li><a href="#page-animal-profile">Butterfly 2</a></li>
-				<li><a href="#page-animal-profile">Butterfly 3</a></li>
-				<li><a href="#page-animal-profile">Butterfly 4</a></li>
-				<li><a href="#page-animal-profile">Butterfly 5</a></li>
-				<li><a href="#page-animal-profile">Butterfly 6</a></li>
-				<li><a href="#page-animal-profile">Butterfly 7</a></li>
-				<li><a href="#page-animal-profile">Butterfly 8</a></li>
-				<li><a href="#page-animal-profile">Butterfly 9</a></li>
-				<li><a href="#page-animal-profile">Butterfly 10</a></li>
-				<li><a href="#page-animal-profile">Butterfly 1</a></li>
-				<li><a href="#page-animal-profile">Butterfly 2</a></li>
-				<li><a href="#page-animal-profile">Butterfly 3</a></li>
-				<li><a href="#page-animal-profile">Butterfly 4</a></li>
-				<li><a href="#page-animal-profile">Butterfly 5</a></li>
-				<li><a href="#page-animal-profile">Butterfly 6</a></li>
-				<li><a href="#page-animal-profile">Butterfly 7</a></li>
-				<li><a href="#page-animal-profile">Butterfly 8</a></li>
-				<li><a href="#page-animal-profile">Butterfly 9</a></li>
-				<li><a href="#page-animal-profile">Butterfly 10</a></li>
-				<li><a href="#page-animal-profile">Butterfly 1</a></li>
-				<li><a href="#page-animal-profile">Butterfly 2</a></li>
-				<li><a href="#page-animal-profile">Butterfly 3</a></li>
-				<li><a href="#page-animal-profile">Butterfly 4</a></li>
-				<li><a href="#page-animal-profile">Butterfly 5</a></li>
-				<li><a href="#page-animal-profile">Butterfly 6</a></li>
-				<li><a href="#page-animal-profile">Butterfly 7</a></li>
-				<li><a href="#page-animal-profile">Butterfly 8</a></li>
-				<li><a href="#page-animal-profile">Butterfly 9</a></li>
-				<li><a href="#page-animal-profile">Butterfly 10</a></li>
+			<ul class="animallist padding-md">
+				<li class="animallist-item" data-template="#animallist-item-template"></li>
+				<li class="animallist-item" data-template="#animallist-item-template"></li>
+				<li class="animallist-item" data-template="#animallist-item-template"></li>
+				<li class="animallist-item" data-template="#animallist-item-template"></li>
+				<li class="animallist-item" data-template="#animallist-item-template"></li>
+				<li class="animallist-item" data-template="#animallist-item-template"></li>
+				<li class="animallist-item" data-template="#animallist-item-template"></li>
+				<li class="animallist-item" data-template="#animallist-item-template"></li>
+				<li class="animallist-item" data-template="#animallist-item-template"></li>
+				<li class="animallist-item" data-template="#animallist-item-template"></li>
+				<li><a href="#page-animal-profile"></a></li>
+				
 			</ul>
 
 		</div>
@@ -201,12 +190,21 @@
 	<section data-role="page" id="page-user-profile">
 		<header data-role="header">
 				<h1>My Profile</h1>
-				<ul>
-					<li><a href="#" data-rel="back"> &lt; </a></li>
-				</ul>
+				
 			</header>
 		<div data-role="main" class="overscroll">
-			<div><button class="form-button js-logout">Log Out</button></div>
+			<div class="user-profile-image">
+				<img src="img/profile-photo.jpg">
+			</div>
+			<div class="user-profile-information">
+				<h3>Neeraja Gogte</h3>
+				<div>
+					<div class="user-profile-title">Butterflies tracked</div>
+					<div class="user-profile-description"><p>23 butterflies</p></div>
+					<div class="user-profile-title">Locations</div>
+					<div class="user-profile-description"><p>42 locations</p></div>
+				<div><button class="form-button js-logout">Log Out</button></div>
+			</div>
 		</div>
 		<footer data-role="footer">
 			<ul>
@@ -224,11 +222,57 @@
 				<li><a href="#" data-rel="back"> &lt; </a></li>
 			</ul>
 		</header>
-		<div data-role="main">
-			Butterfly!
+		<div data-role="main" class="overscroll">
+			<div class="butterfly-profile flex-none">
+				<img src="img/butterfly-1.jpg">
+			</div>
+			<div class="butterfly-profile-information">
+				<h1>Blue Menelaus Morpho</h1>
+				<div>
+					<div class="appearance-title">Appearance description</div>
+					<div class="appearance-description"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis lectus sit amet porta tincidunt. Aliquam at magna ultrices, mattis justo vitae, feugiat tortor. Donec ornare enim sit amet lacus feugiat convallis. Donec mi ipsum, volutpat non neque ac, convallis finibus elit. Nulla semper tortor porttitor risus rhoncus auctor. Donec blandit mattis turpis eu consectetur. Duis vel rhoncus eros. Mauris a feugiat est. Donec fringilla iaculis risus, ac laoreet felis ornare vitae. Nulla sed sollicitudin eros. In vehicula consectetur velit, a laoreet libero bibendum quis. Sed lobortis cursus erat, ut finibus metus tristique vel. Ut ac orci neque.
+
+					Fusce non augue ligula. Ut at nisi sem. Maecenas faucibus sapien in volutpat blandit. Etiam sapien eros, hendrerit vitae cursus ultricies, pretium quis urna. </p></div>
+
+						
+					<div><button class="form-button">View all locations</button></div>
+						
+				</div>
+			</div>
 		</div>
+		<footer data-role="footer">
+			<ul>
+				<li><a href="#page-recent"><img class="nav-icon" src="img/nav-icon-location.png"></a></li>
+				<li><a href="#page-list"><img class="nav-icon" src="img/nav-icon-list.png"></a></li>
+				<li><a href="#page-user-profile"><img class="nav-icon" src="img/nav-icon-profile.png"></a></li>
+			</ul>
+		</footer>
 		
 	</section>
+	<script type="text/template" id="animallist-item-template">
+			<a href="#page-animal-profile" class="display-flex">
+				<div class="flex-none animallist-item-image">
+					<img src="img/butterfly-1.jpg" alt="">
+				</div>
+				<div class="flex-stretch animallist-item-body padding-md">
+					<div class="animallist-item-name">Butterfly</div>
+					<div class="animallist-item-colour"><strong>Colour: </strong>Blue</div>
+					<div class="animallist-item-species"><strong>Species: </strong>Species name</div>
+				</div>
+			</a>
+	</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
