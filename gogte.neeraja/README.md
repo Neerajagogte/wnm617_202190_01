@@ -19,6 +19,9 @@
 ### Assignment 5
 - http://neerajagogte.com/aau/wnm617/gogte.neeraja/demo/jquery.html
 
+### Assignment 6,7
+- http://neerajagogte.com/aau/wnm617/gogte.neeraja/#page-signin
+
 ## Perhaps Some Notes
 
 - Take note of how markdown works
