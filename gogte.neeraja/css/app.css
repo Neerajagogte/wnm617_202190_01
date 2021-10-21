@@ -48,11 +48,22 @@ a{
 .flex-justify-center{justify-content: center;}
 .flex-vertical{flex-direction: column;}
 
-
+.position-relative{
+	position: relative;
+}
+.position-absolute{
+	position: absolute;
+}
 
 .overscroll{overflow: auto;}
 .overscroll-x{overflow-x: auto;}
 .overscroll-y{overflow-y: auto;}
+
+
+.fill-parent {
+   width: 100%;
+   height: 100%;
+}
 
 
 .centered{text-align: center;}
@@ -66,6 +77,7 @@ a{
 .padding-top-md{padding-top: 2rem;}
 .padding-top-lg{padding-top: 3rem;}
 
+.padding-sm {padding:0.5em;}
 .padding-md{padding: 1em;}
 .padding-lg{padding: 2em;}
 
@@ -235,7 +247,7 @@ a{
 	border-width: 0;
 	background-color: var(--color-neutral-dark);
 	margin: 1em 0;
-	padding: 5px 30px;
+	padding: 15px 30px;
 	border-radius: 5em;
 	outline: 0;
 	font-family:  var(--font-sans);
@@ -246,6 +258,24 @@ a{
 	font-size: 1rem;
 	color: white;
 	}
+
+.edit-btn{
+	height: 3em;
+	display: inline-block;
+	border-width: 0;
+	background-color: white;
+	margin: 1em 0;
+	padding: 15px 30px;
+	border-radius: 5em;
+	outline: 1px solid #7772EF;
+	font-family:  var(--font-sans);
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 1rem;
+	color: var(--color-contrast-dark);
+}
 
 .form-label{}
 
@@ -281,12 +311,8 @@ a{
     vertical-align: middle;
 }
 
-.hamburger-icon{
-    width: 35px;
-    height: 35px;
-    margin: 0;
-    vertical-align: middle;
-}
+
+
 
 /* Floater */
 .floater{position: absolute;}
@@ -298,8 +324,10 @@ a{
 
 /* Circle Button */
 .btn-circle{
+	color: var(--color-contrast-dark);
 	display: inline-block;
-	background-image: linear-gradient(#00BB82,#00B1CE);
+	background-color: var(--color-main-dark);
+	/*  background-image: linear-gradient(#00BB82,#00B1CE);  */
 	width: 3.5rem;
 	height: 3.5rem;
 	line-height: 3.5rem;
@@ -333,11 +361,16 @@ a{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(119, 114, 239, 1);
+	background-color: var(--color-main-dark);
 	/*background-color: rgba(0,0,0,0.4);*/
 }
 
+
+
+
+
 /* Modal Popup */
+
 .modal-popup{
 	position: absolute;
 	top: 50%;
@@ -368,13 +401,21 @@ a{
 	transform: translate(-50%, -50%);
 }
 
+
+
+
+
 /* Modal Drawers */
+
 .modal-drawer{
 	position: absolute;
 	display: flex;
 	flex-direction: column;
 	transition: all 0.3s;
 	box-shadow: 0px 0px 20px rgba(119, 114, 239, 30%);
+	border: 0;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
 }
 
 .modal-drawer.left,
@@ -397,6 +438,18 @@ a{
 
 .modal.active .modal-drawer{
 	transform: translate(0);
+}
+
+
+
+
+/* Modal Drawers Hamburger menu */
+
+.hamburger-icon{
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    vertical-align: middle;
 }
 
 .modal-hamburger-back{
@@ -444,6 +497,7 @@ list-style-type: none;
 .modal-hamburger-body{
 	background-color: var(--color-main-dark);
 	line-height: 2rem;
+	border-top-right-radius: 50px;
 }
 .modal-hamburger-head{
 	background-color: var(--color-main-dark);
@@ -452,6 +506,7 @@ list-style-type: none;
 	padding: 10px;
 	background-color: var(--color-main-dark);
 	line-height: 2rem;
+	border-bottom-right-radius: 50px;
 }
 
 .line {
@@ -468,6 +523,11 @@ line-height: 2em;
 }
 
 .modal-hamburger-close img{ width: 60px; height: 59px; }
+
+
+
+
+/* Butterfly list */
 
 .animallist{
 	list-style-type: none;
@@ -511,6 +571,11 @@ line-height: 2em;
 	line-height: 0.5em;
 }
 
+
+
+
+/* Butterfly list > butterfly profile */
+
 .butterfly-profile img{
 	width: 400px;
 	height: 300px;
@@ -545,6 +610,11 @@ line-height: 2em;
 	margin: 0;
 }
 
+
+
+
+/* User profile */
+
 .user-profile-image{
 	display: flex;
     justify-content: center; 
@@ -557,15 +627,28 @@ line-height: 2em;
 	object-fit: cover;
 	border-radius: 50%;
     border: 0;
-    margin: 40px;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-bottom: 0;
+    margin-left: 40px;
 }
 
 .user-profile-information{
 	padding:0 2em;
 }
 
+.user-profile-information h3{
+	padding:0;
+	color: var(--color-contrast-dark);
+}
+
+.user-profile-information h4{
+	text-decoration: underline;
+	color: var(--color-neutral-medium);
+}
+
 .user-profile-information button{
-	margin-top:2em;
+	margin-top:12em;
 	margin-bottom:2em;
 }
 .user-profile-title{
