@@ -1,10 +1,10 @@
-<? php
+<?php
 
-function makeConn(){
+function makeConn() {
 	include "auth.php";
-	try{
+	try {
 		$conn = new PDO(...Auth());
-		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		return $conn;
 	} catch(PDOException $e) {
 		die('{"error":"'.$e->getMessage().'"}');
@@ -15,8 +15,8 @@ function makeConn(){
 /* $r = PDO result */
 function fetchAll($r) {
 	$a = [];
-	while($row = $r->fetch(\PDO::FETCH_OBJ)) {$a[]= $row;
-		return $a;
+	while($row = $r->fetch(\PDO::FETCH_OBJ)) $a[]= $row;
+	return $a;
 }
 
 
@@ -28,7 +28,7 @@ $p = parameters
 */
 
 function makeQuery($c,$ps,$p,$makeResults=true){
-	try{
+	try {
 		if(count($p)) {
 			$stmt = $c->prepare($ps);
 			$stmt->execute($p);
@@ -47,13 +47,53 @@ function makeQuery($c,$ps,$p,$makeResults=true){
 	}
 }
 
+function makeStatement($data) {
+   try{
+      $c = makeConn();
+      $t = $data->type;
+      $p = $data->params;
+
+      switch($t) {
+
+      		case "users_all":
+            return makeQuery($c,"SELECT * FROM `track_users`",$p);
+         case "animals_all":
+            return makeQuery($c,"SELECT * FROM `track_animals`",$p);
+         case "locations_all":
+            return makeQuery($c,"SELECT * FROM `track_locations`",$p);
+
+         case "user_by_id":
+            return makeQuery($c,"SELECT * FROM `track_users` WHERE `id`=?",$p);
+         case "animal_by_id":
+            return makeQuery($c,"SELECT * FROM `track_animals` WHERE `id`=?",$p);
+         case "location_by_id":
+            return makeQuery($c,"SELECT * FROM `track_locations` WHERE `id`=?",$p);
+
+         case "animals_by_user_id":
+            return makeQuery($c,"SELECT * FROM `track_animals` WHERE `user_id`=?",$p);
+         case "locations_by_animal_id":
+            return makeQuery($c,"SELECT * FROM `track_locations` WHERE `animal_id`=?",$p);
+
+
+
+            case "check_signin":
+            return makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? AND `password`=md5(?)",$p);
+
+
+
+         default: return ["error"=>"No Matched Type"];
+      }
+   } catch(Exception $e) {
+      return ["error"=>"Bad Data"];
+   }
+}
+
+
+$data = json_decode(file_get_contents("php://input"));
+
 die(
-json_encode(
-		makeQuery(
-			makeConn(),
-				"SELECT * FROM track_locations WHERE id=?",
-				[6]
-			),
-			json_NUMERIC_CHECK
-		)
-	);
+	json_encode(
+		makeStatement($data),
+		JSON_NUMERIC_CHECK
+	)
+);

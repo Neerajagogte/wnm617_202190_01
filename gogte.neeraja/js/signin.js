@@ -1,34 +1,39 @@
-const checkSigninForm = () => {
+const checkSigninForm = async() => {
+   let user = $("#signin-username").val();
+   let pass = $("#signin-password").val();
 
-	let user = $("#signin-username").val();
-	let pass = $("#signin-password").val();
+   if(user==''||pass=='') {
+      // Make a Warning
+   }
 
-	console.log(user,pass);
+   let found_user = await query({
+      type:'check_signin',
+      params:[user,pass]
+   });
+   console.log(found_user);
 
-	if(user == 'user' && pass == 'pass') {
-		// logged in
-	console.log("success");
-	sessionStorage.userId = 3;
-	$("#signin-form")[0].reset();
-	} else {
-		//not logged in
-	console.log("failure");
-	sessionStorage.removeItem('userId');
-	}
-	checkUserId();
+   if(found_user.result.length > 0) {
+      // logged in
+      sessionStorage.userId = found_user.result[0].id;
+      $("#signin-form")[0].reset();
+   } else {
+      // not logged in
+      sessionStorage.removeItem('userId');
+   }
+   checkUserId();
 }
 
 
 const checkUserId = () => {
-	let p = ['#page-signin','#page-signup',''];
+   let p = ['#page-signin','#page-signup',''];
 
-	if(sessionStorage.userId === undefined) {
-		//not logged in
-		if(!p.some(o=>window.location.hash===o))
-			$.mobile.navigate("#page-signin");
-	} else{
-		//logged in
-		if(p.some(o=>window.location.hash===o))
-			$.mobile.navigate("#page-recent");
-	}
+   if(sessionStorage.userId === undefined) {
+      // not logged in
+      if(!p.some(o=>window.location.hash===o))
+            $.mobile.navigate("#page-signin");
+   } else {
+      // logged in
+      if(p.some(o=>window.location.hash===o))
+            $.mobile.navigate("#page-recent");
+   }
 }

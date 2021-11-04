@@ -1,5 +1,12 @@
 $(()=>{
 
+	query({
+		type:'animals_by_user_id',
+		params:[4]
+	}).then(d=>{
+		console.log(d)
+	})
+
 	checkUserId();
 
 // Event Delegation
