@@ -1,21 +1,34 @@
+//DOCUMENT READY
 $(()=>{
-
-	query({
-		type:'animals_by_user_id',
-		params:[4]
-	}).then(d=>{
-		console.log(d)
-	})
 
 	checkUserId();
 
 // Event Delegation
 $(document)
 
+.on("pagecontainerbeforeshow",function(event, ui){
+      // Page Routing
+      switch(ui.toPage[0].id) {
+         case "page-recent": RecentPage(); break;
+         case "page-list": ListPage(); break;
+         case "page-user-profile": UserProfilePage(); break;
+         case "page-animal-profile": AnimalProfilePage(); break;
+      }
+   })
+
+
+
+
+
+
+//Form Submits
+
 .on("submit","#signin-form",function(e){
 	e.preventDefault();
-
 	checkSigninForm();
+})
+.on("submit","#list-add-form",function(e){
+	e.preventDefault();
 })
 
 
