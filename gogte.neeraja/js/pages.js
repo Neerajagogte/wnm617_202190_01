@@ -36,5 +36,5 @@ const AnimalProfilePage = async() => {
       return;
    }
    let [animal] = result;
-   $(".animal-profile img").attr("src",animal.img);
+   $(".butterfly-profile img").attr("src",animal.img);
 }
