@@ -6,7 +6,7 @@ $(()=>{
 // Event Delegation
 $(document)
 
-.on("pagecontainerbeforeshow",function(event, ui){
+ .on("pagecontainerbeforeshow",function(event, ui){
       // Page Routing
       switch(ui.toPage[0].id) {
          case "page-recent": RecentPage(); break;
@@ -15,7 +15,6 @@ $(document)
          case "page-animal-profile": AnimalProfilePage(); break;
       }
    })
-
 
 
 
@@ -38,6 +37,13 @@ $(document)
 	sessionStorage.removeItem("userId");
 	checkUserId();
 })
+.on("click",".animal-jump",function(e) {
+      if(!$(this).data("id")) throw("No ID on element");
+      sessionStorage.animalId = $(this).data("id");
+      $.mobile.navigate("#page-animal-profile");
+   })
+
+
 
 
 .on("click","[data-activate]",function(e){
@@ -55,7 +61,12 @@ $(document)
 	let target = $(this).data("toggle");
 	$(target).toggleClass("active")
 })
-;
+.on("click","[data-activateone]",function(e){
+      let target = $(this).data("activateone");
+      $(target).addClass("active").siblings().removeClass('active');
+   })
+
+
 
 
 $("[data-template]").each(function(){
@@ -64,3 +75,7 @@ $("[data-template]").each(function(){
 })
 
 });
+
+
+
+

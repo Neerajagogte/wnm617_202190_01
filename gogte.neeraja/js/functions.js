@@ -12,3 +12,16 @@ const query = (options) => {
 const templater = f => a =>
    (Array.isArray(a)?a:[a])
    .reduce((r,o,i,a)=>r+f(o,i,a),'');
+
+
+ /*
+function templater(func) {
+   return function(a) {
+      return (Array.isArray(a)?a:[a])
+         .reduce(function(reducer,obj,ind,arr){
+            return reducer + func(obj,ind,arr);
+         }
+      )
+   }
+}
+*/
