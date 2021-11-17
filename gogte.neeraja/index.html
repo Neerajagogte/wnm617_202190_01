@@ -17,7 +17,15 @@
 	<script src="js/functions.js"></script>
 	<script src="js/pages.js"></script>
 	<script src="js/parts.js"></script>
+	<script src="js/maps.js"></script>
 	<script src="js/signin.js"></script>
+
+
+	<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzJqpkHWRS8oLazglkmSCqjzL5zA21Sl4"
+      async></script>
+
+	
 
 	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -221,7 +229,7 @@
 
 
 
-	<section data-role="page" id="page-animal-add">
+	<section data-role="page" id="page-animal-edit">
 			<header data-role="header">
 			<h1>Edit butterfly</h1>
 			<ul>
@@ -251,29 +259,35 @@
 	</section>
 
 
+	<section data-role="page" id="page-animal-profile-map">
+		<div data-role="main">
+			<div class="map"></div>
+			<div class="floater top-back-btn left btn-circle-back"><a href="#" data-rel="back"> &#x2715; </a></div>
+		</div>
+	</section>
+
+
 	<section data-role="page" id="page-animal-profile">
-		<header data-role="header">
-			<h1>Butterfly!</h1>
-			<ul>
-				<li><a href="#" data-rel="back"> &lt; </a></li>
-			</ul>
-		</header>
+		
 		<div data-role="main" class="overscroll">
+			<div class="floater middle right padding-top-lg">
+				<a href="#page-animal-edit" class="btn-circle">
+					<img class="edit-icon" src="img/edit.png">
+				</a>
+			</div>
 			<div class="butterfly-profile flex-none">
-				<img src="img/butterfly-1.jpg">
+				<img src="https://via.placeholder.com/600x600?text=Animal" alt="">
 			</div>
 			<div class="butterfly-profile-information">
-				<h1>Blue Menelaus Morpho</h1>
+				<div class="butterfly-species"></div>
 				<div>
-					<div class="appearance-title">Appearance description</div>
-					<div class="appearance-description"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis lectus sit amet porta tincidunt. Aliquam at magna ultrices, mattis justo vitae, feugiat tortor. Donec ornare enim sit amet lacus feugiat convallis. Donec mi ipsum, volutpat non neque ac, convallis finibus elit. Nulla semper tortor porttitor risus rhoncus auctor. Donec blandit mattis turpis eu consectetur. Duis vel rhoncus eros. Mauris a feugiat est. Donec fringilla iaculis risus, ac laoreet felis ornare vitae. Nulla sed sollicitudin eros. In vehicula consectetur velit, a laoreet libero bibendum quis. Sed lobortis cursus erat, ut finibus metus tristique vel. Ut ac orci neque.
+					<div class="appearance-title">Description</div>
+					<div class="appearance-description"></div>
 
-					Fusce non augue ligula. Ut at nisi sem. Maecenas faucibus sapien in volutpat blandit. Etiam sapien eros, hendrerit vitae cursus ultricies, pretium quis urna. </p></div>
-
-					<div class="centered"><a href="#page-animal-add" class="edit-btn"> Edit info</a></div>
-						
+					<div class="centered"><a href="#page-animal-profile-map" class="edit-btn"> View all locations</a></div>		
 				</div>
 			</div>
+			<div class="floater top-back-btn left btn-circle-back"><a href="#" data-rel="back"> &lt; </a></div>
 		</div>
 
 		<footer data-role="footer">
