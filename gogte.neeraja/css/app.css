@@ -245,7 +245,7 @@ a{
 	height: 3em;
 	display: inline-block;
 	border-width: 0;
-	background-color: var(--color-neutral-dark);
+	background-color: var(--color-contrast-medium);
 	margin: 1em 0;
 	padding: 15px 30px;
 	border-radius: 5em;
@@ -256,7 +256,6 @@ a{
 	text-decoration: none;
 	font-weight: 400;
 	font-size: 1rem;
-	color: white;
 	}
 
 .edit-btn{
@@ -279,6 +278,10 @@ a{
 
 .form-label{}
 
+.yellow{
+	background-color: var(--color-main-dark);
+}
+
 .splash-screen{
 	position: absolute;
 	top: 0;
@@ -286,6 +289,17 @@ a{
 	width: 100%;
 	height: 100%;
 	background-image: url(../img/splash-screen.png);
+	background-size: cover;
+	background-position: center;	
+}
+
+.splash-screen-signup{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-main-dark);
 	background-size: cover;
 	background-position: center;	
 }
@@ -378,8 +392,8 @@ a{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: var(--color-main-dark);
-	/*background-color: rgba(0,0,0,0.4);*/
+	/*background-color: var(--color-main-dark);*/
+	background-color: rgba(52,51,109,0.4);
 }
 
 
@@ -393,24 +407,24 @@ a{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, calc(-50% + 3em));
-	border-radius: 10px;
-	width: 80vmin;
+	border-radius: 20px;
+	width: 85vmin;
 	overflow: hidden;
 	transition: all 0.3s;
 }
 
 .modal-body{
 	padding: 10px;
-	background-color: white;
+	background-color: var(--color-main-dark);
 	line-height: 2rem;
 }
 .modal-head{
 	padding: 10px;
-	background-color: white;
+	background-color: var(--color-main-dark);
 }
 .modal-foot{
 	padding: 10px;
-	background-color: white;
+	background-color: var(--color-main-dark);
 	line-height: 2rem;
 	padding: 0 1em;
 }
@@ -653,6 +667,13 @@ line-height: 2em;
 }
 
 
+.animal-popup-image,
+.animal-popup-body {
+   pointer-events: none;
+}
+.animal-popup-image img {
+   max-width: 50px;
+}
 
 
 /* User profile */

@@ -63,7 +63,7 @@
 
 
 	<section data-role="page" id="page-signup">
-		<div data-role="main" class="display-flex flex-vertical">
+		<div data-role="main" class="display-flex flex-vertical splash-screen-signup">
 			<div class="flex-stretch"></div>
 			<form data-ajax="false" class="form" id="signup-form" style="padding: 10px;">
 				<div class="padding-even">
@@ -91,12 +91,16 @@
 	</section>
 	
 
+
+	
+
+
 	<section data-role="page" id="page-recent">
 		
 		<div data-role="main">
 			<div class="map"></div>
 			<div class="floater top right padding-top-lg">
-				<a href="#" class="btn-circle" data-activate="#map-add-modal">&plus;</a>
+				<a href="#page-animal-add" class="btn-circle">&plus;</a>
 			</div>
 
 			<header data-role="header">
@@ -116,32 +120,6 @@
 			</ul>
 		</footer>
 
-		<div class="modal" id="map-add-modal">
-			<div class="modal-back" data-deactivate="#map-add-modal">
-			</div>
-			<form class="modal-popup form" id="map-add-form" data-ajax="false">
-					<div class="modal-head centered"><h3>Add Butterfly</h3></div>
-					<div class="modal-body">
-						<div class="form-control">
-							<label for="map-add-name" class="form-label">Type of species</label>
-							<input type="text" id="map-add-name" class="form-input" data-role="none" placeholder="Name">
-						</div>
-						<div class="form-control">
-							<label for="map-add-type" class="form-label">Colour</label>
-							<input type="text" id="map-add-type" class="form-input" data-role="none" placeholder="Colour">
-						</div>
-						
-					</div>
-					<div class="modal-foot">
-						<button type="submit" class="form-button">Upload a picture</button>
-						<div class="centered"><a href="#page-recent" data-deactivate="#map-add-modal" class="save-btn"> Save </a></div>
-					</div>
-
-
-
-
-				</form>
-		</div>
 
 		<div class="modal" id="map-more-modal">
 			<div class="modal-hamburger-back" data-deactivate="#map-more-modal"></div>
@@ -170,6 +148,7 @@
 		</div>
 
 	</section>
+
 
 
 
@@ -225,46 +204,6 @@
 		</footer>
 	</section>
 
-	
-
-
-
-	<section data-role="page" id="page-animal-edit">
-			<header data-role="header">
-			<h1>Edit butterfly</h1>
-			<ul>
-				<li><a href="#" data-rel="back"> &lt; </a></li>
-			</ul>
-		</header>
-		<div data-role="main">
-			<form class="fill-parent display-flex flex-vertical" id="animal-add-form" data-ajax="false">
-				<div class="flex-stretch position-relative">
-					<div class="fill-parent overscroll position-absolute padding-md">
-						<div class="form-control">
-							<input class="form-input" type="text" id="edit-animal-name" data-role="none" placeholder="Name"><span class="label-animal-name"></span>
-						</div>
-						<div class="form-control">
-							<input class="form-input" type="text" id="edit-animal-colour" data-role="none" placeholder="Colour"><span class="label-animal-name"></span>
-						</div>
-						<div class="form-control">
-							<input class="form-input" type="text" id="edit-animal-species" data-role="none" placeholder="Description"><span class="label-animal-species"></span>
-						</div>
-					</div>
-				</div>
-				<div class="flex-none centered" style="margin-bottom: 450px;">
-					<a href="#page-list" class="save-btn">Save</a>
-				</div>
-			</form>
-		</div>
-	</section>
-
-
-	<section data-role="page" id="page-animal-profile-map">
-		<div data-role="main">
-			<div class="map"></div>
-			<div class="floater top-back-btn left btn-circle-back"><a href="#" data-rel="back"> &#x2715; </a></div>
-		</div>
-	</section>
 
 
 	<section data-role="page" id="page-animal-profile">
@@ -299,6 +238,72 @@
 		</footer>
 		
 	</section>
+
+
+
+	<section data-role="page" id="page-animal-edit">
+			<header data-role="header">
+			<h1>Edit butterfly</h1>
+			<ul>
+				<li><a href="#" data-rel="back"> &lt; </a></li>
+			</ul>
+			</header>
+			<div data-role="main" class="yellow">
+				<form class="fill-parent display-flex flex-vertical" id="animal-edit-form" data-ajax="false">
+					<div class="flex-stretch position-relative">
+						<div class="fill-parent padding-md">
+							<!-- <div class="form-control">
+								<input class="form-input" type="text" id="edit-animal-name" data-role="none" placeholder="Name"><span class="label-animal-name"></span>
+							</div>
+							<div class="form-control">
+								<input class="form-input" type="text" id="edit-animal-colour" data-role="none" placeholder="Colour"><span class="label-animal-name"></span>
+							</div>
+							<div class="form-control">
+								<input class="form-input" type="text" id="edit-animal-species" data-role="none" placeholder="Description"><span class="label-animal-species"></span>
+							</div> -->
+						</div>
+					</div>
+					<div class="flex-none centered" style="margin-bottom: 450px;">
+						<a href="#page-list" class="save-btn">Save</a>
+					</div>
+				</form>
+			</div>
+	</section>
+
+
+	<section data-role="page" id="page-animal-profile-map">
+		<div data-role="main">
+			<div class="map"></div>
+			<div class="floater top-back-btn left btn-circle-back"><a href="#" data-rel="back"> &#x2715; </a></div>
+		</div>
+	</section>
+
+	
+	<section data-role="page" id="page-animal-add">
+			<header data-role="header">
+				<h1>Add butterfly</h1>
+			</header>
+			<div data-role="main" class="yellow">
+				<form class="fill-parent display-flex flex-vertical" id="animal-add-form" data-ajax="false">
+					<div class="flex-stretch position-relative">
+						<div class="fill-parent padding-md">
+
+
+						</div>
+					</div>
+					
+					<div class="flex-none centered" style="margin-bottom: 450px;">
+						<a href="#page-recent" class="save-btn">Save</a>
+					</div>
+				</form>
+			</div>
+	<section>
+
+
+	
+
+
+	
 	
 
 </body>

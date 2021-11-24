@@ -15,6 +15,7 @@ $(document)
          case "page-animal-profile": AnimalProfilePage(); break;
          case "page-animal-profile-map": AnimalProfileMapPage(); break;
          case "page-animal-edit": AnimalEditPage(); break;
+         case "page-animal-add": AnimalAddPage(); break;
       }
    })
 
