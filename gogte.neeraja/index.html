@@ -19,6 +19,7 @@
 	<script src="js/parts.js"></script>
 	<script src="js/maps.js"></script>
 	<script src="js/signin.js"></script>
+	<script src="js/forms.js"></script>
 
 
 	<script
@@ -157,26 +158,14 @@
 			<h1>My Profile</h1>
 		</header>
 		<div data-role="main" class="overscroll">
-			<div class="user-profile-image">
-				<img src="img/profile-photo.jpg">
+			<div class="floater top right">
+				<a href="#page-user-edit" class="btn-circle">
+				<img class="edit-icon" src="img/edit.png">
+				</a>
 			</div>
-			<div class="user-profile-information">
-				<h1 class="centered">Neeraja Gogte</h1>
-				<h2 class="centered">neerajagogte@whatever.com</h2>
-					<div class="display-inline-flex">
-						<div class="padding-md">
-							<div class="user-profile-title">Butterflies tracked</div>
-							<div class="user-profile-description"><p>23 butterflies</p></div>
-						</div>
-						<div class="padding-md">
-							<div class="user-profile-title">Locations</div>
-							<div class="user-profile-description"><p>42 locations</p></div>
-						</div>
-					</div>
-					<div class="centered"><a href="#page-edit-user-profile" class="edit-btn"> Edit info</a></div>
-					<button class="form-button js-logout">Log Out</button>
-			</div>
+					
 		</div>
+
 		<footer data-role="footer">
 			<ul>
 				<li><a href="#page-recent"><img class="nav-icon" src="img/nav-icon-location.png"></a></li>
@@ -185,6 +174,28 @@
 			</ul>
 		</footer>
 	</section>
+
+
+	<section data-role="page" id="page-user-edit">
+      <header data-role="header">
+         <h1>User Edit</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submituseredit">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         
+         <form class="fill-parent display-flex flex-vertical" id="user-edit-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  
+               </div>
+            </div>
+         </form>
+      </div>
+   </section>
 
 	<section data-role="page" id="page-list">
 		<header data-role="header">
@@ -245,8 +256,8 @@
 			<header data-role="header">
 			<h1>Edit butterfly</h1>
 			<ul>
-				<li><a href="#" data-rel="back"> &lt; </a></li>
-			</ul>
+	            <li><a href="#" data-rel="back" style="font-size: 1em;">Cancel</a></li>
+	         </ul>
 			</header>
 			<div data-role="main" class="yellow">
 				<form class="fill-parent display-flex flex-vertical" id="animal-edit-form" data-ajax="false">
@@ -263,8 +274,8 @@
 							</div> -->
 						</div>
 					</div>
-					<div class="flex-none centered" style="margin-bottom: 450px;">
-						<a href="#page-list" class="save-btn">Save</a>
+					<div class="flex-none centered" style="margin-bottom: 300px;">
+						<button type="submit" class="save-btn">Save</button>
 					</div>
 				</form>
 			</div>
@@ -282,6 +293,9 @@
 	<section data-role="page" id="page-animal-add">
 			<header data-role="header">
 				<h1>Add butterfly</h1>
+			<ul>
+	            <li><a href="#" data-rel="back" style="font-size: 1em;">Cancel</a></li>
+	         </ul>
 			</header>
 			<div data-role="main" class="yellow">
 				<form class="fill-parent display-flex flex-vertical" id="animal-add-form" data-ajax="false">
@@ -292,8 +306,8 @@
 						</div>
 					</div>
 					
-					<div class="flex-none centered" style="margin-bottom: 450px;">
-						<a href="#page-recent" class="save-btn">Save</a>
+					<div class="flex-none centered" style="margin-bottom: 450px; width: 150px;">
+						<button type="submit" class="save-btn">Save</button>
 					</div>
 				</form>
 			</div>

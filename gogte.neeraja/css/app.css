@@ -727,6 +727,17 @@ line-height: 2em;
 	margin: 0;
 }
 
+.name{
+    font-size: 1.5em;
+    color: var(--color-contrast-dark);
+    margin: 1em 0em 1em;
+}
+
+.user-name{
+    font-size: 1em;
+    color: var(--color-neutral-dark);
+    margin: 0.5em 0em 0.5em;
+}
 
 
 

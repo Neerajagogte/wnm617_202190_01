@@ -19,9 +19,9 @@ const makeUserProfile = (o) => `
    <img src="${o.img}" alt="">
 </div>
 <div>
-   <div class="user-profile-information h1">${o.name}</div>
-   <div class="user-profile-information h2">&commat;${o.username}</div>
-   <div class="user-profile-information button"><a href="#page-user-settings">Settings</a></div>
+   <div class="user-profile-information name centered">${o.name}</div>
+   <div class="user-profile-information user-name centered">&commat;${o.username}</div>
+   <div class="user-profile-information user-name centered">&commat;${o.email}</div>  
 </div>
 `;
 
@@ -65,20 +65,21 @@ ${FormControlInput({
 })}
 ${FormControlInput({
    namespace:namespace,
-   name:"type",
-   displayname:"Type",
-   type:"text",
-   placeholder:"Type the butterfly colour",
-   value:o.type
-})}
-${FormControlInput({
-   namespace:namespace,
    name:"species",
    displayname:"Species",
    type:"text",
    placeholder:"Type the butterfly species",
    value:o.species
 })}
+${FormControlInput({
+   namespace:namespace,
+   name:"type",
+   displayname:"Type",
+   type:"text",
+   placeholder:"Type the butterfly colour",
+   value:o.type
+})}
+
 ${FormControlTextarea({
    namespace:namespace,
    name:"description",

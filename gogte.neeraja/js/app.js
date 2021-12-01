@@ -12,6 +12,7 @@ $(document)
          case "page-recent": RecentPage(); break;
          case "page-list": ListPage(); break;
          case "page-user-profile": UserProfilePage(); break;
+         case "page-user-edit": UserEditPage(); break;
          case "page-animal-profile": AnimalProfilePage(); break;
          case "page-animal-profile-map": AnimalProfileMapPage(); break;
          case "page-animal-edit": AnimalEditPage(); break;
@@ -31,6 +32,16 @@ $(document)
 })
 .on("submit","#list-add-form",function(e){
 	e.preventDefault();
+})
+
+.on("submit", "#animal-add-form", function(e) {
+      e.preventDefault();
+      animalAddForm();
+})
+
+.on("submit", "#animal-edit-form", function(e) {
+      e.preventDefault();
+      animalEditForm();
 })
 
 

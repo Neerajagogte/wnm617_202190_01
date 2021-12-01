@@ -101,6 +101,57 @@ function makeStatement($data) {
 
 
 
+        
+            /* CREATE */
+
+         case "insert_user":
+            $r = makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? OR `email` = ?",$p);
+            if(count($r['result'])) return ["error"=>"Username or Email already exists"];
+
+            $r = makeQuery($c,"INSERT INTO
+               `track_users`
+               (`username`, `email`, `password`, `img`, `date_create`)
+               VALUES
+               (?, ?, md5(?), 'http://via.placeholder.com/400/?text=USER', NOW())
+               ",$p,false);
+            return ["id" => $c->lastInsertId()];
+
+         case "insert_animal":
+            $r = makeQuery($c,"INSERT INTO
+               `track_animals`
+               (`user_id`, `name`, `type`, `species`, `description`, `img`, `date_create`)
+               VALUES
+               (?, ?, ?, ?, ?, 'http://via.placeholder.com/400/?text=ANIMAL', NOW())
+               ",$p,false);
+            return ["id" => $c->lastInsertId()];
+
+         case "insert_location":
+            $r = makeQuery($c,"INSERT INTO
+               `track_locations`
+               (`animal_id`, `lat`, `lng`, `description`, `color`, `photo`, `date_create`)
+               VALUES
+               (?, ?, ?, ?, ?, 'http://via.placeholder.com/400/?text=PHOTO', NOW())
+               ",$p,false);
+            return ["id" => $c->lastInsertId()];
+
+
+
+            /* UPDATE */
+
+         case "update_animal":
+            $r = makeQuery($c,"UPDATE
+               `track_animals`
+               SET
+                  `name` = ?,                  
+                  `species` = ?,
+                  `type` = ?,
+                  `description` = ?
+               WHERE `id` = ?
+               ",$p,false);
+            return ["result" => "success"];
+
+
+
          default: return ["error"=>"No Matched Type"];
       }
    } catch(Exception $e) {
