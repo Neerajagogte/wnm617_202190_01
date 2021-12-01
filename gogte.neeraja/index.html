@@ -139,9 +139,9 @@
 					<div class="line"></div>
 					<div class="hamburger-menu">
 						<ul>
-							<li><a href="#page-recent">LOCATION</li>
-							<li><a href="#page-list">BUTTERFLY LIST</li>
-							<li><a href="#page-user-profile">YOUR PROFILE</li>
+							<li><a href="#page-user-edit-password">CHANGE PASSWORD</a></li>
+							<li><a href="#" class="js-logout">LOGOUT</a></li>
+							
 						</ul>
 					<div class="modal-hamburger-close" data-deactivate="#map-more-modal"><img src="img/hamburger-close-icon.png"></div>
 				</div>
@@ -180,9 +180,7 @@
       <header data-role="header">
          <h1>User Edit</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#" class="js-submituseredit">Save</a></li>
+            <li><a href="#" data-rel="back" style="font-size: 1em;">Cancel</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -193,9 +191,46 @@
                   
                </div>
             </div>
+            <div class="flex-none centered" style="margin-bottom: 300px;">
+						<a href="#" class="js-submituseredit save-btn">Save</a></li>
+					</div>
+
          </form>
       </div>
    </section>
+
+
+
+   <section data-role="page" id="page-user-edit-password">
+      <header data-role="header">
+         <h1>Edit Password</h1>
+         <ul>
+            <li><a href="#" data-rel="back" style="font-size: 1em;">Cancel</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         
+         <form class="fill-parent display-flex flex-vertical" id="user-edit-password-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  <div class="form-control">
+                     <label for="user-password-initial" class="form-label">Type Password</label>
+                     <input type="password" id="user-password-initial" class="form-input" data-role="none" placeholder="Type A New Password">
+                  </div>
+                  <div class="form-control">
+                     <label for="user-password-confirm" class="form-label">Confirm Password</label>
+                     <input type="password" id="user-password-confirm" class="form-input" data-role="none" placeholder="Confirm New Password">
+                  </div>
+               </div>
+            </div>
+            <div class="flex-none centered" style="margin-bottom: 450px;">
+						<a href="#" class="js-submituserpassword save-btn">Save</a></li>
+					</div>
+         </form>
+      </div>
+   </section>
+
+
 
 	<section data-role="page" id="page-list">
 		<header data-role="header">
@@ -274,7 +309,7 @@
 							</div> -->
 						</div>
 					</div>
-					<div class="flex-none centered" style="margin-bottom: 300px;">
+					<div class="flex-none centered" style="margin-bottom: 300px; width: 150px;">
 						<button type="submit" class="save-btn">Save</button>
 					</div>
 				</form>
@@ -306,7 +341,7 @@
 						</div>
 					</div>
 					
-					<div class="flex-none centered" style="margin-bottom: 450px; width: 150px;">
+					<div class="flex-none centered" data-role="none" style="margin-bottom: 450px; width: 150px;">
 						<button type="submit" class="save-btn">Save</button>
 					</div>
 				</form>

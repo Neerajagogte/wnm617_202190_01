@@ -45,3 +45,21 @@ const userEditForm = async () => {
 
    history.go(-1);
 }
+
+const userEditPasswordForm = async () => {
+   let password = $("#user-password-initial").val();
+   let confirm = $("#user-password-confirm").val();
+
+   if(password!==confirm) throw ("Passwords don't match")
+
+   let r = await query({
+      type:'update_user_password',
+      params:[password,sessionStorage.userId]
+   });
+
+   if(r.error) throw(r.error);
+
+   history.go(-1);
+}
+
+

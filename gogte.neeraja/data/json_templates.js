@@ -58,6 +58,28 @@
 
 
   //LOCATIONS DATA
+  
+//   [
+//   '{{repeat(250)}}',
+//   {
+//     id: '{{index(1)}}',
+//   animal_id: '{{integer(1, 50)}}',
+    
+    
+//     lat: '{{floating( 37.396984, 37.212742)}}',
+//     lng: '{{floating(-121.793264, -121.790884)}}',
+    
+    
+//     description: '{{lorem(3, "sentences")}}',
+    
+//     photo: 'https://via.placeholder.com/400/',
+//     color: '{{random("blue", "yellow", "red")}}',
+    
+//   date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}'
+// }
+//   ]
+
+//NEW
   [
   '{{repeat(250)}}',
   {
@@ -65,8 +87,8 @@
   animal_id: '{{integer(1, 50)}}',
     
     
-    lat: '{{floating( 37.396984, 37.212742)}}',
-    lng: '{{floating(-121.793264, -121.790884)}}',
+    lat: '{{floating( 37.475876, 37.264824)}}',
+    lng: '{{floating(-121.837215, -121.464594)}}',
     
     
     description: '{{lorem(3, "sentences")}}',

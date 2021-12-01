@@ -7,8 +7,10 @@ const makeAnimalList = templater((o)=>`
 	</div>
 	<div class="flex-stretch padding-md">
 		<div class="animallist-item-name">${o.name}</div>
-		<div class="animallist-item-colour"><strong>Colour: </strong>${o.type}</div>
-		<div class="animallist-item-species"><strong>Species: </strong>${o.species}</div>
+		<div class="animallist-item-colour"><strong>Colour: </strong></div>
+      <div class="animallist-item-description">${o.type}</div>
+		<div class="animallist-item-species"><strong>Species: </strong></div>
+      <div class="animallist-item-description">${o.species}</div>
 	</div>
 </div>
 </div>
@@ -20,9 +22,16 @@ const makeUserProfile = (o) => `
 </div>
 <div>
    <div class="user-profile-information name centered">${o.name}</div>
-   <div class="user-profile-information user-name centered">&commat;${o.username}</div>
-   <div class="user-profile-information user-name centered">&commat;${o.email}</div>  
+   <div class="user-profile-information-title centered"><strong>Username: </strong></div>
+   <div class="centered">${o.username}</div>
+   <div class="user-profile-information-title centered padding-top-sm"><strong>Email id: </strong></div>
+  <div class="centered">${o.email}</div>  
 </div>
+<div class="floater bottom right padding-bottom-lg">
+            <a href="#page-user-edit" class="btn-circle">
+            <img class="edit-icon" src="img/edit.png">
+            </a>
+         </div>
 `;
 
 const makeAnimalPopup = o => `
@@ -86,6 +95,33 @@ ${FormControlTextarea({
    displayname:"Description",
    placeholder:"Type the butterfly Description",
    value:o.description
+})}
+`;
+
+const makeUserFormInputs = (o,namespace) => `
+${FormControlInput({
+   namespace:namespace,
+   name:"name",
+   displayname:"Name",
+   type:"text",
+   placeholder:"Type The User Name",
+   value:o.name
+})}
+${FormControlInput({
+   namespace:namespace,
+   name:"username",
+   displayname:"Username",
+   type:"text",
+   placeholder:"Type The User Handle",
+   value:o.username
+})}
+${FormControlInput({
+   namespace:namespace,
+   name:"email",
+   displayname:"Email",
+   type:"email",
+   placeholder:"Type The Email Address",
+   value:o.email
 })}
 `;
 

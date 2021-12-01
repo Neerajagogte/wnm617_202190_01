@@ -138,6 +138,29 @@ function makeStatement($data) {
 
             /* UPDATE */
 
+
+         case "update_user":
+            $r = makeQuery($c,"UPDATE
+               `track_users`
+               SET
+                  `username` = ?,
+                  `name` = ?,
+                  `email` = ?
+               WHERE `id` = ?
+               ",$p,false);
+            return ["result" => "success"];
+
+
+         case "update_user_password":
+            $r = makeQuery($c,"UPDATE
+               `track_users`
+               SET
+                  `password` = md5(?)
+               WHERE `id` = ?
+               ",$p,false);
+            return ["result" => "success"];
+
+
          case "update_animal":
             $r = makeQuery($c,"UPDATE
                `track_animals`
