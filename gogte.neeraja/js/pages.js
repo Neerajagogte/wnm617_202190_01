@@ -12,12 +12,12 @@ const resultQuery = async (options) => {
 
 const ListPage = async() => {
    // destructure
-   let result = await resultQuery({
+   let animals = await resultQuery({
       type:'animals_by_user_id',
       params:[sessionStorage.userId]
    });
 
-   $("#page-list .animallist").html(makeAnimalList(result));
+   makeAnimalListSet(animals);
 }
 
 
@@ -134,6 +134,36 @@ const AnimalAddPage = async() => {
          description:''
       },"animal-add")
    );
+}
+
+
+const LocationSetLocationPage = async() => {
+   let mapEl = await makeMap("#page-location-set-location .map");
+   makeMarkers(mapEl,[]);
+
+   mapEl.data("map").addListener("click",function(e){
+      $("#location-lat").val(e.latLng.lat())
+      $("#location-lng").val(e.latLng.lng())
+      makeMarkers(mapEl,[e.latLng]);
+   })
+}
+
+
+const LocationChooseAnimalPage = async() => {
+   let result = await resultQuery({
+      type:'animals_by_user_id',
+      params:[sessionStorage.userId]
+   });
+
+   console.log(result)
+
+   $(".location-animal-choice-select").html(
+      makeAnimalChoiceSelect({
+         animals:result,
+         name:'location-animal-choice-select'
+      })
+   );
+   $("#location-animal-choice").val(result[0].id);
 }
 
 

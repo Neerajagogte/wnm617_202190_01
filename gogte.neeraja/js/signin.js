@@ -27,7 +27,7 @@ const checkSigninForm = async() => {
 
 
 const checkUserId = () => {
-   let p = ['#page-signin','#page-signup',''];
+   let p = ['#page-signin','#page-signup','#page-signup2'];
 
    if(sessionStorage.userId === undefined) {
       // not logged in
@@ -35,6 +35,7 @@ const checkUserId = () => {
             $.mobile.navigate("#page-signin");
    } else {
       // logged in
+      // console.log(p.some(o=>window.location.hash===o))
       if(p.some(o=>window.location.hash===o))
             $.mobile.navigate("#page-recent");
    }

@@ -67,11 +67,15 @@
 		<div data-role="main" class="display-flex flex-vertical splash-screen-signup">
 			<div class="flex-stretch"></div>
 			<form data-ajax="false" class="form" id="signup-form" style="padding: 10px;">
-				<div class="padding-even">
+				
 					<div class="form-control">
 						<label for="signup-email" class="form-label">Email address</label>
 						<input class="form-input" type="text" id="signup-email" data-role="none" placeholder="Email">
 					</div>
+					<div class="form-control">
+	               <label for="signup-username" class="form-label">Username</label>
+	               <input class="form-input" type="text" id="signup-username" data-role="none" placeholder="Username">
+	            </div>
 					<div class="form-control">
 						<label for="signup-password" class="form-label">New password</label>
 						<input class="form-input" type="password" id="signup-password" data-role="none" placeholder="Password">
@@ -83,25 +87,48 @@
 					<div class="form-control centered">
 						<input type="submit" value="Sign Up" data-role="none"class="signin-btn">
 					</div>
-				</div>
+				
 				<div class="form-control small centered">
 					Already have an account? <a href="#page-signin"><span class="underline">Sign In</span></a>
 				</div>
 			</form>
 		</div>
 	</section>
-	
 
 
-	
+	<section data-role="page" id="page-signup2">
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="flex-stretch"></div>
+         <form data-ajax="false" class="form signin-form" id="signup-form2" style="padding:10px">
+            <div class="form-control">
+               <label for="signup-name" class="form-label">Name</label>
+               <input class="form-input" type="text" id="signup-name" data-role="none" placeholder="Your Name">
+            </div>
+            <div class="form-control">
+               <input type="hidden" id="signup-image-name">
+               <label class="image-picker thumbnail">
+                  <input type="file" data-role="none">
+               </label>
+            </div>
+            <div class="form-control">
+               <input type="submit" value="Start" class="form-button" data-role="none">
+            </div>
+         </form>
+         <div class="flex-stretch"></div>
+      </div>
+   </section>	
 
+
+
+
+<!--MAP PAGE-->
 
 	<section data-role="page" id="page-recent">
 		
 		<div data-role="main">
 			<div class="map"></div>
 			<div class="floater top right padding-top-lg">
-				<a href="#page-animal-add" class="btn-circle">&plus;</a>
+				<a href="#page-location-choose-animal" class="btn-circle">&plus;</a>
 			</div>
 
 			<header data-role="header">
@@ -153,6 +180,9 @@
 
 
 
+<!--USER PROFILE-->
+
+
 	<section data-role="page" id="page-user-profile">
 		<header data-role="header">
 			<h1>My Profile</h1>
@@ -178,12 +208,12 @@
 
 	<section data-role="page" id="page-user-edit">
       <header data-role="header">
-         <h1>User Edit</h1>
+         <h1>Edit User</h1>
          <ul>
             <li><a href="#" data-rel="back" style="font-size: 1em;">Cancel</a></li>
          </ul>
       </header>
-      <div data-role="main">
+      <div data-role="main" class="yellow">
          
          <form class="fill-parent display-flex flex-vertical" id="user-edit-form" data-ajax="false">
             <div class="flex-stretch position-relative">
@@ -191,11 +221,30 @@
                   
                </div>
             </div>
+            <div class="flex-none centered" style="margin: 10px;">
+						<a href="#" class="edit-btn" data-activate="#page-user-upload">Change profile picture</a>
+				</div>
             <div class="flex-none centered" style="margin-bottom: 300px;">
-						<a href="#" class="js-submituseredit save-btn">Save</a></li>
-					</div>
+						<a href="#" class="js-submituseredit js-submituserupload save-btn">Save</a>
+				</div>
 
          </form>
+      </div>
+
+      <div class="modal" id="page-user-upload">
+      	<div class="modal-back" data-deactivate="#page-user-upload"></div>
+      		<div class="modal-popup form">
+					<!-- <div class="modal-head centered"><h3>Upload</h3></div> -->
+					<div class="modal-body">
+
+							<input type="hidden" id="user-upload-filename">
+							<label class="image-picker replace">
+								<img class="upload-image" src="img/add.png">
+								<input type="file" data-role="none">
+							</label>
+					</div>
+					
+				</div>
       </div>
    </section>
 
@@ -232,14 +281,29 @@
 
 
 
+
+
+<!--ANIMAL-->
+
+
+
 	<section data-role="page" id="page-list">
 		<header data-role="header">
 				<h1>My butterfly list</h1>	
+
 		</header>
 		
 		<div data-role="main" class="overscroll">
-				<div class="animallist padding-md"></div>
-		</div>
+			
+			<div class="search-bar flex-none">
+            <form data-ajax="false" id="list-search-form" class="hotdog medium">
+               <input type="search" data-role="none" placeholder="Search for an animal">
+            </form>
+         </div>
+			
+			<div class="animallist padding-md"></div>
+			</div>
+		
 
 		<footer data-role="footer">
 			<ul>
@@ -269,7 +333,10 @@
 					<div class="appearance-title">Description</div>
 					<div class="appearance-description"></div>
 
-					<div class="centered"><a href="#page-animal-profile-map" class="edit-btn"> View all locations</a></div>		
+					<div class="centered"><a href="#page-animal-profile-map" class="edit-btn"> View all locations</a></div>	
+					<div class="flex-none centered" style="margin: 10px;">
+							<a href="#" class="js-animal-delete delete-btn">Delete animal</a>
+						</div>	
 				</div>
 			</div>
 			<div class="floater top-back-btn left btn-circle-back"><a href="#" data-rel="back"> &lt; </a></div>
@@ -309,11 +376,33 @@
 							</div> -->
 						</div>
 					</div>
-					<div class="flex-none centered" style="margin-bottom: 300px; width: 150px;">
-						<button type="submit" class="save-btn">Save</button>
+					<div class="flex-none centered" style="margin: 10px;">
+						<a href="#" class="edit-btn" data-activate="#page-animal-upload">Change profile picture</a>
 					</div>
+					
+					<div class="flex-none centered" style="margin-bottom: 300px; width: 150px;">
+						
+						<button type="submit" class="save-btn js-submitanimalupload">Save</button>
+					</div>
+					
 				</form>
 			</div>
+
+			<div class="modal" id="page-animal-upload">
+      	<div class="modal-back" data-deactivate="#page-animal-upload"></div>
+      		<div class="modal-popup form">
+					<!-- <div class="modal-head centered"><h3>Upload</h3></div> -->
+					<div class="modal-body">
+
+							<input type="hidden" id="animal-upload-filename">
+							<label class="image-picker replace">
+								<img class="upload-image" src="img/add.png">
+								<input type="file" data-role="none">
+							</label>
+					</div>
+					
+				</div>
+      </div>
 	</section>
 
 
@@ -321,8 +410,63 @@
 		<div data-role="main">
 			<div class="map"></div>
 			<div class="floater top-back-btn left btn-circle-back"><a href="#" data-rel="back"> &#x2715; </a></div>
+			<div class="floater bottom right">
+				<a href="#page-location-set-location" class="btn-circle js-chooseanimal" data-setnavigateback="-1" style="
+    margin-bottom: 50px;">
+				&plus;</a>
+			</div>
 		</div>
 	</section>
+
+
+
+	<section data-role="page" id="page-location-choose-animal">
+      <header data-role="header">
+         <h1>Add butterfly</h1>
+         <ul>
+            <li><a href="#" data-rel="back" style="font-size: 1em;">Cancel</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#page-location-set-location" style="font-size: 1em;">Next</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="yellow" style="padding:1em">
+      	<p style="margin: 20px; font-size: 1em;">Add a new butterfly or choose from the list below</p>
+         <input type="hidden" id="location-animal-choice">
+         <div>
+            <a href="#page-animal-add" class="edit-btn centered">Add new</a>
+         </div>
+         <p>Or</p>
+         <div class="form-select location-animal-choice-select"></div>
+      </div>
+   </section>
+
+
+
+	<section data-role="page" id="page-location-set-location">
+      
+      <div data-role="main">
+         <input type="hidden" id="location-lat">
+         <input type="hidden" id="location-lng">
+         <div class="map"></div>
+
+         <header data-role="header">
+	         <h1>Add a Location</h1>
+	         <ul>
+	            <li><a href="#" data-rel="back" style="font-size:1em;">Back</a></li>
+	            
+	         </ul>
+      	</header>
+      	<form action="">
+			<input type="hidden" id="location-navigateback" value="-2">
+			</form>
+      	<div class="floater bottom centered" style="margin-bottom: 30px; margin-left: 25px;">
+			<a href="#" class="js-submitlocationform save-btn">Save</a>
+			</div>
+      </div>
+   </section>
+
+
+   
 
 	
 	<section data-role="page" id="page-animal-add">

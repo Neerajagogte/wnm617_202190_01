@@ -7,10 +7,10 @@ const makeAnimalList = templater((o)=>`
 	</div>
 	<div class="flex-stretch padding-md">
 		<div class="animallist-item-name">${o.name}</div>
-		<div class="animallist-item-colour"><strong>Colour: </strong></div>
-      <div class="animallist-item-description">${o.type}</div>
-		<div class="animallist-item-species"><strong>Species: </strong></div>
+      <div class="animallist-item-species"><strong>Species: </strong></div>
       <div class="animallist-item-description">${o.species}</div>
+		<div class="animallist-item-colour"><strong>Colour: </strong></div>
+      <div class="animallist-item-description">${o.type}</div>		
 	</div>
 </div>
 </div>
@@ -33,6 +33,9 @@ const makeUserProfile = (o) => `
             </a>
          </div>
 `;
+
+
+
 
 const makeAnimalPopup = o => `
 <div class="display-flex animal-jump" data-id="${o.animal_id}">
@@ -125,5 +128,19 @@ ${FormControlInput({
 })}
 `;
 
+
+
+const makeAnimalChoiceSelect = ({animals,name,chosen=0}) => `
+<select id="${name}">
+   ${templater(o=>`
+      <option value="${o.id}" ${o.id===chosen?'selected':''}>${o.name}</option>
+   `)(animals)}
+</select>
+`;
+
+
+const makeAnimalListSet = (arr,target="#page-list .animallist") => {
+   $(target).html(makeAnimalList(arr));
+}
 
 
