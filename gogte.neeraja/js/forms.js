@@ -12,7 +12,7 @@ const animalAddForm = async () => {
    if(r.error) throw(r.error);
 
    sessionStorage.animalId = r.id;
-   history.go(-1);
+   history.go(-2);
 }
 
 const animalEditForm = async () => {

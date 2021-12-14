@@ -534,9 +534,8 @@ a{
 .profile-photo img {
      border-radius: 50%;
     border: 0;
-    width: 90px;
-    height: 90px;
-    margin-left: 10px;
+    width: 100px;
+	height: 100px;
 }
 
 .profile-photo ul {
@@ -837,31 +836,64 @@ line-height: 2em;
 	display: none;
 }
 
+
+.thumbnail {
+  position:relative;
+  display:inline-block;
+  width:8em;
+  height:8em;
+  border-radius:10em;
+  border:0.25em solid #FFF8A6;
+  vertical-align:middle;
+  align-items: center;
+  
+  margin:5em;
+  
+  background-position:center;
+  background-size:cover;
+}
+.thumbnail input {
+   display: none;
+}
+
+
 .upload-image{
     margin-top: 85px;
     margin-left: 110px;
 }
 
+.upload-userimage{
+    background-color: var(--color-main-dark);
+    width: 3em;
+    margin-top: -12px;
+    margin-left: 77px;
+}
+
+
+
+
 .form-select select {
-    background-color: var(--color-neutral-light);
+    background-color: var(--color-contrast-dark);
     border-width: 0;
     padding: 0.5em 1em;
     font: inherit;
-    border-radius: 4px;
+    border-radius: 4em;
     width: 100%;
     -webkit-appearance: none;
+    color: white;
 }
 .form-select {
    position: relative;
 }
 .form-select::after {
+	padding: 5px;
    content: '▼';
    position: absolute;
    right: 0.5em;
    top: 50%;
    transform: translateY(-50%);
    font-size: 0.8em;
-   color: var(--color-neutral-medium);
+   color: white;
 }
 
 

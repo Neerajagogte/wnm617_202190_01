@@ -85,7 +85,7 @@
 						<input class="form-input" type="password" id="signup-password2" data-role="none" placeholder="Confirm">
 					</div>
 					<div class="form-control centered">
-						<input type="submit" value="Sign Up" data-role="none"class="signin-btn">
+						<input type="submit" value="Sign Up" data-role="none" class="signin-btn">
 					</div>
 				
 				<div class="form-control small centered">
@@ -97,21 +97,22 @@
 
 
 	<section data-role="page" id="page-signup2">
-      <div data-role="main" class="display-flex flex-vertical">
+      <div data-role="main" class="display-flex flex-vertical splash-screen-signup">
          <div class="flex-stretch"></div>
          <form data-ajax="false" class="form signin-form" id="signup-form2" style="padding:10px">
-            <div class="form-control">
-               <label for="signup-name" class="form-label">Name</label>
-               <input class="form-input" type="text" id="signup-name" data-role="none" placeholder="Your Name">
-            </div>
-            <div class="form-control">
+            
+            <div class="form-control" style="margin-left: 7em;">
                <input type="hidden" id="signup-image-name">
-               <label class="image-picker thumbnail">
+               <label class="image-picker thumbnail"><img class="upload-userimage" src="img/add2.png">
                   <input type="file" data-role="none">
                </label>
             </div>
             <div class="form-control">
-               <input type="submit" value="Start" class="form-button" data-role="none">
+               <label for="signup-name" class="form-label">Enter your name</label>
+               <input class="form-input" type="text" id="signup-name" data-role="none" placeholder="Your Name">
+            </div>
+            <div class="form-control" style="margin-left: 7.5em;">
+               <input type="submit" value="Done!" class="signin-btn" data-role="none">
             </div>
          </form>
          <div class="flex-stretch"></div>
@@ -157,10 +158,9 @@
 				<div class="modal-hamburger-body"></div>
 				<div class="modal-hamburger-foot">
 					<div class="profile-photo">
-						<img src="img/profile-photo.jpg">
+						<img src="img/butterfly-icon.png">
 						<ul>
-							<li>Neeraja Gogte</li>
-							<li>23 butterflies</li>
+							<li><a href="#page-user-profile">MY PROFILE</a></li>
 						</ul>
 					</div>
 					<div class="line"></div>

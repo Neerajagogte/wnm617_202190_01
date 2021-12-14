@@ -23,7 +23,7 @@ const makeMarkers = (mapEl,mapLocs) => {
 
    if(markers) markers.forEach(o=>o.setMap(null));
 
-   markers = []
+   markers = [];
 
    mapLocs.forEach(o=>{
       let m = new google.maps.Marker({

@@ -161,7 +161,7 @@ function makeStatement($data) {
                `track_locations`
                (`animal_id`, `lat`, `lng`, `description`, `color`, `photo`, `date_create`)
                VALUES
-               (?, ?, ?, ?, ?, 'http://via.placeholder.com/400/?text=PHOTO', NOW())
+               (?, ?, ?, description here, red, 'http://via.placeholder.com/400/?text=PHOTO', NOW())
                ",$p,false);
             return ["id" => $c->lastInsertId()];
 
