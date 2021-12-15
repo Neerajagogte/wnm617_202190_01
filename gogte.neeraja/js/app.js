@@ -17,8 +17,8 @@ $(document)
          case "page-animal-profile-map": AnimalProfileMapPage(); break;
          case "page-animal-edit": AnimalEditPage(); break;
          case "page-animal-add": AnimalAddPage(); break;
-         case "page-location-choose-animal": LocationChooseAnimalPage(); break;
          case "page-location-set-location": LocationSetLocationPage(); break;
+         case "page-location-choose-animal": LocationChooseAnimalPage(); break;
       }
    })
 
@@ -83,6 +83,7 @@ $(document)
       e.preventDefault();
       locationAddForm();
    })
+
 
 
    .on("change",".image-picker input",function(e){

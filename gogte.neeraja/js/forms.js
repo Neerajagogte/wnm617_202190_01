@@ -1,12 +1,12 @@
 const animalAddForm = async () => {
    let name = $("#animal-add-name").val();
-   let type = $("#animal-add-type").val();
    let species = $("#animal-add-species").val();
+   let type = $("#animal-add-type").val();
    let description = $("#animal-add-description").val();
 
    let r = await query({
       type:'insert_animal',
-      params:[sessionStorage.userId,name,type,species,description]
+      params:[sessionStorage.userId,name,species,type,description]
    });
 
    if(r.error) throw(r.error);
@@ -17,13 +17,13 @@ const animalAddForm = async () => {
 
 const animalEditForm = async () => {
    let name = $("#animal-edit-name").val();
-   let type = $("#animal-edit-type").val();
    let species = $("#animal-edit-species").val();
+   let type = $("#animal-edit-type").val();
    let description = $("#animal-edit-description").val();
 
    let r = await query({
       type:'update_animal',
-      params:[name,type,species,description,sessionStorage.animalId]
+      params:[name,species,type,description,sessionStorage.animalId]
    });
 
    if(r.error) throw(r.error);
@@ -99,6 +99,25 @@ const userEditPasswordForm = async () => {
    history.go(-1);
 }
 
+
+
+const locationAddForm = async () => {
+   let animal = $("#location-animal-choice").val();
+   let lat = $("#location-lat").val();
+   let lng = $("#location-lng").val();
+   // let description = $("#location-description").val();
+
+   let r = await query({
+      type:'insert_location',
+      params:[animal,lat,lng]
+   });
+
+   if(r.error) throw(r.error);
+
+   history.go($("#location-navigateback").val());
+}
+
+
 const checkSearchForm = async (s) => {
    let animals = await query({
       type:'search_animals',
@@ -110,19 +129,9 @@ const checkSearchForm = async (s) => {
    makeAnimalListSet(animals.result);
 }
 
-const locationAddForm = async () => {
-   let animal = $("#location-animal-choice").val();
-   let lat = $("#location-lat").val();
-   let lng = $("#location-lng").val();
 
-   let r = await query({
-      type:'insert_location',
-      params:[animal,lat,lng,]
-   });
 
-   if(r.error) throw(r.error);
 
-   history.go($("#location-navigateback").val());
-}
+
 
 

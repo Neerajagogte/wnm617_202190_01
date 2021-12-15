@@ -94,6 +94,7 @@
     description: '{{lorem(3, "sentences")}}',
     
     photo: 'https://via.placeholder.com/400/',
+    icon: 'https://via.placeholder.com/400/?text=ICON',
     color: '{{random("blue", "yellow", "red")}}',
     
   date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}'

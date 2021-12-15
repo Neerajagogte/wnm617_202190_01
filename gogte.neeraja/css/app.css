@@ -335,6 +335,12 @@ a{
 	background-position: center;*/
 }
 
+.map.animal-profile-map{
+	margin: 10px;
+	height: 500px;
+	width: 100%;
+	position: relative;
+}
 
 
 /* Footer icons */
@@ -687,6 +693,14 @@ line-height: 2em;
 	margin: 0;
 }
 
+.appearance-colour{
+	color: var(--color-neutral-medium);
+}
+
+.appearance-colour p{
+	margin: 0;
+}
+
 
 .animal-popup-image,
 .animal-popup-body {
@@ -695,6 +709,8 @@ line-height: 2em;
 .animal-popup-image img {
    max-width: 50px;
 }
+
+
 
 
 /* User profile */

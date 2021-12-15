@@ -333,8 +333,11 @@
 					<div class="appearance-title">Description</div>
 					<div class="appearance-description"></div>
 
+					<div class="appearance-title" style="margin-top: 10px;">Colour</div>
+					<div class="appearance-colour"></div>
+
 					<div class="centered"><a href="#page-animal-profile-map" class="edit-btn"> View all locations</a></div>	
-					<div class="flex-none centered" style="margin: 10px;">
+					<div class="flex-none centered" style="margin: 8px;">
 							<a href="#" class="js-animal-delete delete-btn">Delete animal</a>
 						</div>	
 				</div>
@@ -411,12 +414,14 @@
 			<div class="map"></div>
 			<div class="floater top-back-btn left btn-circle-back"><a href="#" data-rel="back"> &#x2715; </a></div>
 			<div class="floater bottom right">
-				<a href="#page-location-set-location" class="btn-circle js-chooseanimal" data-setnavigateback="-1" style="
-    margin-bottom: 50px;">
+				<a href="#page-location-set-location" class="btn-circle js-chooseanimal" data-setnavigateback="-2" style="margin-bottom: 50px;">
 				&plus;</a>
 			</div>
 		</div>
 	</section>
+
+
+
 
 
 
@@ -443,12 +448,14 @@
 
 
 	<section data-role="page" id="page-location-set-location">
+
+		
       
       <div data-role="main">
          <input type="hidden" id="location-lat">
          <input type="hidden" id="location-lng">
+         
          <div class="map"></div>
-
          <header data-role="header">
 	         <h1>Add a Location</h1>
 	         <ul>
@@ -456,16 +463,42 @@
 	            
 	         </ul>
       	</header>
-      	<form action="">
-			<input type="hidden" id="location-navigateback" value="-2">
-			</form>
+
+         <input type="hidden" id="location-navigateback" value="-2">
+
+      	
       	<div class="floater bottom centered" style="margin-bottom: 30px; margin-left: 25px;">
 			<a href="#" class="js-submitlocationform save-btn">Save</a>
 			</div>
       </div>
+
    </section>
 
+<!-- 
+   <section data-role="page" id="page-location-description">
+      <header data-role="header">
+         <h1>Description</h1>
+         <ul>
+            <li><a href="#" data-rel="back" style="font-size:1em;">Back</a></li> -->
+            <!-- <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submitlocationform">Save</a></li> -->
+         <!-- </ul>
+      </header>
+      <div data-role="main">
+         <form action="" style="padding:1em">
+            <input type="hidden" id="location-navigateback" value="-3">
 
+            <div class="form-control">
+               <label for="location-description" class="form-label">Describe the butterfly</label>
+               <textarea id="location-description" class="form-input" data-role="none" placeholder="What did it look like?"></textarea>
+            </div>
+         </form>
+
+         <div class="floater bottom centered" style="margin-bottom: 30px; margin-left: 25px;">
+			<a href="#" class="js-submitlocationform save-btn">Save</a>
+			</div>
+      </div>
+   </section> -->
    
 
 	

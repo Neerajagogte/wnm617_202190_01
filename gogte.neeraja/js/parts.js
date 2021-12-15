@@ -42,10 +42,11 @@ const makeAnimalPopup = o => `
    <div class="flex-none animal-popup-image">
       <img src="${o.img}" alt="">
    </div>
-   <div class="flex-stretch animal-popup-body padding-md">
+   <div class="flex-stretch animal-popup-body padding-sm">
       <div class="animal-popup-name">${o.name}</div>
-      <div class="animal-popup-colour"><strong>Colour: </strong> ${o.type}</div>
       <div class="animal-popup-species"><strong>Species: </strong> ${o.species}</div>
+      <div class="animal-popup-colour"><strong>Colour: </strong> ${o.type}</div>
+      
    </div>
 </div>
 `;
@@ -86,7 +87,7 @@ ${FormControlInput({
 ${FormControlInput({
    namespace:namespace,
    name:"type",
-   displayname:"Type",
+   displayname:"Colour",
    type:"text",
    placeholder:"Type the butterfly colour",
    value:o.type
