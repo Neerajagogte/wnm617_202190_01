@@ -135,6 +135,14 @@ function makeStatement($data) {
                ",$p);
 
 
+            case "filter_animals":
+            return makeQuery($c,"SELECT *
+               FROM `track_animals`
+               WHERE
+                  `$p[0]` = ? AND
+                  `user_id` = ?
+               ",[$p[1],$p[2]]);
+
 
         
             /* CREATE */
@@ -161,14 +169,23 @@ function makeStatement($data) {
                ",$p,false);
             return ["id" => $c->lastInsertId()];
 
-         case "insert_location":
-            $r = makeQuery($c,"INSERT INTO
-               `track_locations`
-               (`animal_id`, `lat`, `lng`, `description`, `color`, `photo`, `icon`, `date_create`)
-               VALUES
-               (?, ?, ?, ?, ?, 'http://via.placeholder.com/400/?text=PHOTO', 'http://via.placeholder.com/400/?text=ICON', NOW())",$p,false);
-            $r['id'] = $c->lastInsertId();
-            return $r;
+         // case "insert_location":
+         //    $r = makeQuery($c,"INSERT INTO
+         //       `track_locations`
+         //       (`animal_id`, `lat`, `lng`, `description`, `color`, `photo`, `icon`, `date_create`)
+         //       VALUES
+         //       (?, ?, ?, ?, ?, 'http://via.placeholder.com/400/?text=PHOTO', 'http://via.placeholder.com/400/?text=ICON', NOW())",$p,false);
+         //    $r['id'] = $c->lastInsertId();
+         //    return $r;
+
+            case "insert_location":
+           $r = makeQuery($c,"INSERT INTO
+              `track_locations`
+              (`animal_id`, `lat`, `lng`, `description`, `color`, `photo`, `icon`, `date_create`)
+              VALUES
+              (?, ?, ?, 'description', 'color', 'http://via.placeholder.com/400/?text=PHOTO', 'http://via.placeholder.com/400/?text=ICON', NOW())",$p,false);
+           $r['id'] = $c->lastInsertId();
+           return $r;
 
 
 

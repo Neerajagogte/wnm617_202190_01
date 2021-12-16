@@ -129,6 +129,17 @@ const checkSearchForm = async (s) => {
    makeAnimalListSet(animals.result);
 }
 
+const checkFilter = async (f,v) => {
+   let animals = await query({
+      type:'filter_animals',
+      params:[f,v,sessionStorage.userId]
+   });
+
+   if(animals.error) throw(animals.error);
+
+   makeAnimalListSet(animals.result);
+}
+
 
 
 

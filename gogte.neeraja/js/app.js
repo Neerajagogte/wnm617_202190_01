@@ -86,6 +86,13 @@ $(document)
 
 
 
+   .on("click","[data-filter]",function(e){
+      let {filter,value} = $(this).data();
+      if(value=="") ListPage();
+      else checkFilter(filter,value);
+   })
+   
+
    .on("change",".image-picker input",function(e){
       checkUpload(this.files[0])
       .then(d=>{

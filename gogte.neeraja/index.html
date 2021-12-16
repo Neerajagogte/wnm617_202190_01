@@ -43,6 +43,7 @@
 	<section data-role="page" id="page-signin">
 		<div data-role="main" class="display-flex flex-vertical splash-screen">
 			<div class="flex-stretch"></div>
+			<h3 class="centered" style=" margin: -1em;">Welcome to Flutter!</h3>
 			<form data-ajax="false" class="form signin-form" id="signin-form" style="padding: 10px;">
 			<div class="padding-even">
 				<div class="form-control">
@@ -67,7 +68,7 @@
 		<div data-role="main" class="display-flex flex-vertical splash-screen-signup">
 			<div class="flex-stretch"></div>
 			<form data-ajax="false" class="form" id="signup-form" style="padding: 10px;">
-				
+				<div class="padding-even">
 					<div class="form-control">
 						<label for="signup-email" class="form-label">Email address</label>
 						<input class="form-input" type="text" id="signup-email" data-role="none" placeholder="Email">
@@ -87,7 +88,7 @@
 					<div class="form-control centered">
 						<input type="submit" value="Sign Up" data-role="none" class="signin-btn">
 					</div>
-				
+				</div>
 				<div class="form-control small centered">
 					Already have an account? <a href="#page-signin"><span class="underline">Sign In</span></a>
 				</div>
@@ -133,7 +134,7 @@
 			</div>
 
 			<header data-role="header">
-				<h1>Welcome to Flutter!</h1>
+				<h1>Recent Locations</h1>
 				<ul>
 					<li><a href="#" data-activate="#map-more-modal"><img class="hamburger-icon" src="img/hamburger-menu-icon.png"></a></li>
 
@@ -300,7 +301,7 @@
                <input type="search" data-role="none" placeholder="Search for an animal">
             </form>
          </div>
-			
+			<div class="filter-bar flex-none"></div>
 			<div class="animallist padding-md"></div>
 			</div>
 		
